@@ -8,6 +8,7 @@ buildscript {
 
 plugins {
     id 'org.springframework.boot' version '3.0.0'
+    id 'java'
     id("maven-publish")
 }
 
@@ -43,6 +44,7 @@ allprojects {
 
 subprojects {
     apply plugin: 'java'
+    apply plugin: ("maven-publish")
 
     buildscript {
         repositories {
