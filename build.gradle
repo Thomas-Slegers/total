@@ -42,7 +42,7 @@ allprojects {
 }
 
 
-subprojects {
+/*subprojects {
     apply plugin: 'java'
     apply plugin: ("maven-publish")
 
@@ -60,7 +60,7 @@ subprojects {
             dependency 'org.threeten:threeten-extra:1.7.2'
         }
     }
-}
+}*/
 publishing {
     repositories {
         maven {
