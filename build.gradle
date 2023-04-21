@@ -21,21 +21,6 @@ dependencies {
     implementation('org.springframework.boot:spring-boot-starter-webflux:3.0.1')
 }
 
-/*allprojects {
-    group 'com.total'
-    version "$version"
-
-    apply plugin: 'io.spring.dependency-management'
-
-    repositories {
-        mavenCentral()
-    }
-
-    dependencyManagement {
-
-    }
-}*/
-
 test {
     useJUnitPlatform()
 }
