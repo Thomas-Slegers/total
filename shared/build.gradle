@@ -1,0 +1,19 @@
+plugins {
+    id 'java'
+}
+
+group 'com.cegeka.horizon.camis.domain'
+version "$version"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.assertj:assertj-core'
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
+
+test {
+    useJUnitPlatform()
+}
