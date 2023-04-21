@@ -39,9 +39,9 @@ publishing {
     }
     publications {
         gpr(MavenPublication) {
-            groupId = "com.total"
+            groupId = "com.cegeka.horizon.camis.synctimesheet"
             artifactId = "total"
-            version = "1.0.3"
+            version = "1.0.4"
 
             from(components.java)
         }
