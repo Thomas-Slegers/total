@@ -15,7 +15,7 @@ public class SyncTimesheetApp {
     private OperationExecutor executor;
 
     public static void main(String[] args) {
-        new SpringApplicationBuilder(SyncTimesheetApp.class).web(WebApplicationType.NONE).run(args);
+//        new SpringApplicationBuilder(SyncTimesheetApp.class).web(WebApplicationType.NONE).run(args);
     }
 
     @Bean
