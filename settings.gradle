@@ -1,7 +1,7 @@
 rootProject.name = 'CamisAPI'
-//include 'shared'
-//include 'workorder_access'
-//include 'timesheet'
-//include 'sync_timesheet_application'
+include 'shared'
+include 'workorder_access'
+include 'timesheet'
+include 'sync_timesheet_application'
 include 'sync_timesheet_application'
 
