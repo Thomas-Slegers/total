@@ -6,7 +6,7 @@ plugins {
     id("maven-publish")
 }
 
-group = 'com.cegeka.horizon.camis.synctimesheet'
+group = 'com.cegeka.horizon.camis'
 version = '1.0-SNAPSHOT'
 
 repositories {
@@ -25,10 +25,45 @@ test {
     useJUnitPlatform()
 }
 
+allprojects {
+    group 'com.cegeka.horizon.camis'
+    version "$version"
+
+    apply plugin: 'io.spring.dependency-management'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencyManagement {
+
+    }
+}
+
+
+subprojects {
+    apply plugin: 'java'
+
+    buildscript {
+        repositories {
+            mavenCentral()
+        }
+    }
+    dependencyManagement {
+        imports {
+            mavenBom(SpringBootPlugin.BOM_COORDINATES)
+        }
+        dependencies {
+            dependency 'com.opencsv:opencsv:5.7.1'
+            dependency 'org.threeten:threeten-extra:1.7.2'
+        }
+    }
+}
+
 publishing {
     repositories {
         maven {
-            name = "GitHubPackages"
+            name = "CamisApi"
             // Note that your GitHub username should be in lowercase.
             url = uri("https://maven.pkg.github.com/thomas-slegers/total")
             credentials {
@@ -39,7 +74,7 @@ publishing {
     }
     publications {
         gpr(MavenPublication) {
-            groupId = "com.cegeka.horizon.camis.synctimesheet"
+            groupId = "com.cegeka.horizon.camis"
             artifactId = "total"
             version = "1.0.6"
 

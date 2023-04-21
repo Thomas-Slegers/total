@@ -1,4 +1,4 @@
-package com.random;
+package com.total;
 
 public class Main {
     public static void main(String[] args) {
