@@ -1,70 +1,32 @@
 import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-}
-
 plugins {
     id 'org.springframework.boot' version '3.0.0'
     id 'java'
     id("maven-publish")
 }
 
-apply plugin: 'java'
-apply plugin: 'io.spring.dependency-management'
+group = 'com.basic'
+version = '1.0-SNAPSHOT'
 
-dependencies {
-    repositories {
-        mavenCentral()
-    }
-
-    implementation platform(SpringBootPlugin.BOM_COORDINATES)
-
-    implementation('org.springframework.boot:spring-boot-starter-webflux:3.0.1')
+repositories {
+    mavenCentral()
 }
 
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+}
 
-/*allprojects {
-    group 'com.cegeka.horizon.camis'
-    version "$version"
+test {
+    useJUnitPlatform()
+}
 
-    apply plugin: 'io.spring.dependency-management'
-
-    repositories {
-        mavenCentral()
-    }
-
-    dependencyManagement {
-
-    }
-}*/
-
-
-/*subprojects {
-    apply plugin: 'java'
-    apply plugin: ("maven-publish")
-
-    buildscript {
-        repositories {
-            mavenCentral()
-        }
-    }
-    dependencyManagement {
-        imports {
-            mavenBom(SpringBootPlugin.BOM_COORDINATES)
-        }
-        dependencies {
-            dependency 'com.opencsv:opencsv:5.7.1'
-            dependency 'org.threeten:threeten-extra:1.7.2'
-        }
-    }
-}*/
 publishing {
     repositories {
         maven {
-            name = "total"
+            name = "GitHubPackages"
+            // Note that your GitHub username should be in lowercase.
             url = uri("https://maven.pkg.github.com/thomas-slegers/total")
             credentials {
                 username = System.getenv("GITHUB_ACTOR")
