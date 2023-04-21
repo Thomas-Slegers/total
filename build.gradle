@@ -56,7 +56,7 @@ publishing {
         gpr(MavenPublication) {
             groupId = "com.total"
             artifactId = "total"
-            version = "1.0.0"
+            version = "1.0.1"
 
             from(components.java)
         }
